@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAISME ANVAYA | Admin Control Room</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ece6d8;--card:#f6f1e4;--ink:#17202e;--muted:#566074;--hot:#e8552b;--line:rgba(23,32,46,.18)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Archivo,system-ui,sans-serif}
+header{background:var(--ink);color:var(--bg);padding:16px 5vw;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}header a{color:inherit;text-decoration:none;font-weight:800}
+main{max-width:1120px;margin:auto;padding:34px 20px 70px}.kicker{font:12px 'IBM Plex Mono',monospace;color:var(--hot);letter-spacing:.08em}
+h1{font-size:clamp(2rem,6vw,4rem);line-height:1;margin:10px 0}.muted{color:var(--muted)}
+.panel{background:var(--card);border:2px solid var(--ink);padding:22px;margin:22px 0;box-shadow:5px 5px 0 var(--hot)}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}label{display:grid;gap:6px;font-weight:600}
+input,textarea,select{width:100%;padding:12px;border:1.5px solid var(--ink);background:#fffdf7;color:var(--ink);font:inherit}textarea{min-height:85px}.wide{grid-column:1/-1}
+button{border:2px solid var(--ink);background:var(--ink);color:var(--bg);padding:11px 16px;font:700 14px Archivo;cursor:pointer}
+button.secondary{background:transparent;color:var(--ink)}button.danger{background:#9d2f20;border-color:#9d2f20}
+.actions{display:flex;gap:8px;flex-wrap:wrap}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.tabs button.active{background:var(--hot);border-color:var(--hot)}
+.notice{padding:12px;background:#fff4d6;border-left:4px solid var(--hot);margin:12px 0}.status{min-height:24px;color:var(--hot);font-weight:600}
+table{width:100%;border-collapse:collapse;background:#fffdf7}th,td{text-align:left;padding:11px;border-bottom:1px solid var(--line);vertical-align:top}th{font:12px 'IBM Plex Mono',monospace;text-transform:uppercase}
+.tablewrap{overflow:auto}.hidden{display:none!important}.checkbox{display:flex;align-items:center;gap:8px}.checkbox input{width:auto}
+@media(max-width:650px){form{grid-template-columns:1fr}.wide{grid-column:auto}main{padding-inline:14px}.panel{padding:16px}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script></head>
+<body><header><a href="index.html">RAISME ANVAYA / CONTROL ROOM</a><a href="index.html">← View public website</a></header>
+<main><div class="kicker">PRIVATE AREA · AUTHORISED CLUB ADMINS</div><h1>Club control room<span style="color:var(--hot)">.</span></h1>
+<p class="muted">Manage member profiles, events and announcements. Saved changes appear on the public website.</p>
+<div id="setupNotice" class="notice hidden">Configure <b>config.js</b> with your Supabase Project URL and anon/public key, then refresh. Never paste a service_role key into website files.</div>
+<section id="loginPanel" class="panel"><h2>Admin sign in</h2><p class="muted">Use the admin account created in Supabase Authentication.</p>
+<form id="loginForm"><label>Email<input id="email" type="email" required></label><label>Password<input id="password" type="password" required></label><div class="wide"><button>Sign in →</button></div></form><div id="loginStatus" class="status"></div></section>
+<section id="dashboard" class="hidden"><div class="panel actions" style="justify-content:space-between"><b id="signedInAs"></b><button id="logout" class="secondary">Sign out</button></div>
+<div class="tabs"><button class="active" data-tab="members">Members</button><button data-tab="events">Events</button><button data-tab="announcements">Announcements</button></div>
+<section class="panel" id="membersPanel"><div class="actions" style="justify-content:space-between"><h2>Members</h2><button id="newMember">+ Add member</button></div>
+<form id="memberForm" class="hidden"><input type="hidden" id="memberId">
+<label>Full name<input id="memberName" required></label><label>USN (admin-only)<input id="memberUsn"></label>
+<label>Designation / position<input id="memberDesignation" placeholder="e.g. President"></label><label>Wing<select id="memberWing"><option value="">Select wing</option><option>Core Committee</option><option>Technical</option><option>Sports</option><option>Cultural</option><option>Academic</option><option>Event Management</option><option>Innovation & Entrepreneurship</option><option>Media & Publicity</option><option>Design & Creative</option></select></label>
+<label class="wide">Short bio<input id="memberBio"></label><label class="wide">Photo URL (optional)<input id="memberPhoto" type="url" placeholder="https://..."></label>
+<label>Display order<input id="memberOrder" type="number" value="100"></label><label class="checkbox"><input id="memberPublished" type="checkbox" checked> Show publicly</label>
+<div class="wide actions"><button>Save member</button><button type="button" class="secondary" id="cancelMember">Cancel</button></div></form>
+<div id="membersStatus" class="status"></div><div id="membersTable" class="tablewrap">Sign in to load members.</div></section>
+<section class="panel hidden" id="eventsPanel"><div class="actions" style="justify-content:space-between"><h2>Events</h2><button id="newEvent">+ Add event</button></div>
+<form id="eventForm" class="hidden"><input type="hidden" id="eventId"><label>Event title<input id="eventTitle" required></label><label>Date<input id="eventDate" type="date"></label><label class="wide">Description<textarea id="eventDescription"></textarea></label><label class="checkbox"><input id="eventPublished" type="checkbox" checked> Publish publicly</label><div class="wide actions"><button>Save event</button><button type="button" class="secondary" id="cancelEvent">Cancel</button></div></form><div id="eventsStatus" class="status"></div><div id="eventsTable" class="tablewrap"></div></section>
+<section class="panel hidden" id="announcementsPanel"><div class="actions" style="justify-content:space-between"><h2>Announcements</h2><button id="newAnnouncement">+ Add announcement</button></div>
+<form id="announcementForm" class="hidden"><input type="hidden" id="announcementId"><label class="wide">Headline<input id="announcementTitle" required></label><label class="wide">Message<textarea id="announcementBody" required></textarea></label><label class="checkbox"><input id="announcementPublished" type="checkbox" checked> Publish publicly</label><div class="wide actions"><button>Save announcement</button><button type="button" class="secondary" id="cancelAnnouncement">Cancel</button></div></form><div id="announcementsStatus" class="status"></div><div id="announcementsTable" class="tablewrap"></div></section>
+</section></main><script src="admin.js"></script></body></html>

@@ -147,6 +147,7 @@ footer{max-width:1180px;margin:auto;padding:2.5rem 1.25rem}
 <section class="sheet" id="team"><div class="sh"><b>Sheet 05 / 06</b><span>Assembly</span></div><h2>Our team</h2><div class="grid" id="teamGrid"></div>
 <div class="wings"><h3>Eight activity wings</h3><div class="grid" id="wingGrid"></div></div></section>
 
+<section class="sheet" id="events" hidden><div class="sh"><span>What’s happening</span></div><h2>Events & activities</h2><div class="grid" id="eventsGrid"></div></section>
 <section class="sheet" id="announcements" hidden><div class="sh"><span>Revision notes</span></div><h2>Announcements</h2><div class="grid" id="annGrid"></div></section>
 <section class="sheet" id="contact" hidden><div class="sh"><span>Contact</span></div><h2>Contact us</h2><div class="part" id="cInfo" style="max-width:640px"></div></section>
 
@@ -154,7 +155,7 @@ footer{max-width:1180px;margin:auto;padding:2.5rem 1.25rem}
 </main>
 <footer id="end">
 <div class="tblock"><div><small>Project</small><a class="logo" href="#home">Raisme Anvaya</a><br><span class="meta">Connecting Minds. Creating Innovations. Building Futures.</span></div><div><small>Drawn by</small>Students of the Mechanical Department and the Robotics &amp; AI branch</div><div><small>Sheet</small>06 / 06</div><div><small>Note</small>Do not scale drawing</div></div>
-<div class="fl"><a href="#about">About</a><a href="#activities">Activities</a><a data-form href="#register">Registration form</a><a href="#team">Team</a><button class="btn o s" id="share">Share this site</button></div>
+<div class="fl"><a href="#about">About</a><a href="#activities">Activities</a><a data-form href="#register">Registration form</a><a href="#team">Team</a><a href="admin.html">Admin</a><button class="btn o s" id="share">Share this site</button></div>
 <p class="meta">&copy; <span id="yr"></span> RAISME ANVAYA. All rights reserved.</p>
 </footer>
 <script src="data.js"></script>
@@ -247,5 +248,41 @@ document.documentElement.addEventListener('pointerleave',()=>{x.style.opacity=0}
 const io='IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08}):null;
 document.querySelectorAll('.sheet>*,.say p').forEach(el=>{el.classList.add('rv');io?io.observe(el):el.classList.add('in')});
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script>
+(async function(){
+  const cfg=window.RAISME_SUPABASE||{};
+  if(!cfg.url||!cfg.anonKey||!window.supabase)return;
+  try{
+    const db=window.supabase.createClient(cfg.url,cfg.anonKey);
+    const [mr,er,ar]=await Promise.all([
+      db.from('members').select('id,name,designation,bio,photo_url,wing,sort_order').eq('published',true).order('sort_order').order('name'),
+      db.from('events').select('id,title,event_date,description').eq('published',true).order('event_date'),
+      db.from('announcements').select('id,title,body,created_at').eq('published',true).order('created_at',{ascending:false})
+    ]);
+    const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const photo=x=>/^https:\/\/[^\s"'<>]+$/i.test(x||'')?esc(x):'';
+    if(!mr.error&&mr.data){
+      const grid=document.getElementById('teamGrid');
+      grid.innerHTML=mr.data.map((m,i)=>{
+        const p=photo(m.photo_url), initials=esc((m.name||'?').trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase());
+        return `<article class="part"><div class="lab"><span>A-${String(i+1).padStart(2,'0')}</span><span>${esc(m.designation||m.wing||'Club Member')}</span></div>${p?`<img class="av" src="${p}" alt="${esc(m.name)}" loading="lazy">`:`<div class="av" aria-hidden="true">${initials}</div>`}<h3>${esc(m.name)}</h3><p>${esc(m.bio||m.wing||'RAISME ANVAYA member')}</p></article>`;
+      }).join('')||'<p>Member profiles will be announced soon.</p>';
+      const count=document.getElementById('mem');if(count)count.dataset.n=String(mr.data.length);
+    }
+    if(!er.error&&er.data&&er.data.length){
+      document.getElementById('events').hidden=false;
+      document.getElementById('eventsGrid').innerHTML=er.data.map(e=>`<article class="part"><div class="lab"><span>${esc(e.event_date||'Date to be announced')}</span></div><h3 style="margin-top:.5rem">${esc(e.title)}</h3><p>${esc(e.description||'')}</p></article>`).join('');
+    }
+    if(!ar.error&&ar.data&&ar.data.length){
+      document.getElementById('announcements').hidden=false;
+      document.getElementById('annGrid').innerHTML=ar.data.map(a=>`<article class="part"><div class="lab"><span>${a.created_at?new Date(a.created_at).toLocaleDateString():''}</span></div><h3 style="margin-top:.5rem">${esc(a.title)}</h3><p>${esc(a.body)}</p></article>`).join('');
+    }
+  }catch(e){console.warn('Live club content unavailable; showing saved website content.',e);}
+})();
+</script>
+
 </body>
 </html>
