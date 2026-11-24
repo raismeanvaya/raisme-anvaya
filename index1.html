@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ece6d8">
+<title>RAISME ANVAYA | Robotics, AI and Mechanical Innovation Club</title>
+<meta name="description" content="RAISME ANVAYA is a multidisciplinary student club of the Mechanical Department and Robotics & AI branch: robotics, AI, mechanical design, workshops, competitions, sports and culture.">
+<meta property="og:title" content="RAISME ANVAYA">
+<meta property="og:description" content="Connecting Minds. Creating Innovations. Building Futures.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%BE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--paper:#ece6d8;--card:#f6f1e4;--ink:#17202e;--mute:#566074;--hot:#e8552b;--line:rgba(23,32,46,.16)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;background:#ece6d8}
+body{margin:0;color:var(--ink);background:var(--paper);font:400 1.02rem/1.65 Archivo,system-ui,sans-serif}
+em{font:italic 400 1.1em "Instrument Serif",Georgia,serif}
+small,.lab,th,.mono,figcaption,.nav i{font-family:"IBM Plex Mono",ui-monospace,monospace}
+a{color:inherit}:focus-visible{outline:3px solid var(--hot);outline-offset:3px}
+.hd{position:sticky;top:0;z-index:30;background:rgba(236,230,216,.95);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink)}
+.hd>div{max-width:1180px;margin:auto;padding:.7rem 1.25rem;display:flex;align-items:center;gap:1.2rem}
+.logo{font:800 1.05rem Archivo,sans-serif;text-decoration:none;text-transform:uppercase;letter-spacing:.04em}
+.nav{display:flex;gap:1.4rem;margin:0 0 0 auto;list-style:none;padding:0}
+.nav a{text-decoration:none;font-weight:600;font-size:.95rem}.nav i{font-style:normal;font-size:.68rem;color:var(--hot);margin-right:.3rem}.nav a:hover{text-decoration:underline;text-decoration-thickness:2px}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;font:800 1rem Archivo,sans-serif;padding:.8rem 1.5rem;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--hot);transition:transform .15s,box-shadow .15s;cursor:pointer}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--hot)}
+.btn.o{background:none;color:var(--ink);box-shadow:4px 4px 0 var(--ink)}.btn.o:hover{box-shadow:2px 2px 0 var(--ink)}
+.btn.s{padding:.5rem 1rem;font-size:.9rem}
+#burger{display:none;background:none;border:2px solid var(--ink);padding:.45rem .8rem;font:600 .85rem "IBM Plex Mono",monospace;cursor:pointer;color:var(--ink)}
+@media(max-width:860px){#burger{display:block}.hd .btn.s{margin-left:auto}.nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--paper);border-bottom:2px solid var(--ink);margin:0}.nav.open{display:flex}.nav a{display:block;padding:.95rem 1.25rem;border-top:1px solid var(--line)}}
+.hero{border-bottom:2px solid var(--ink);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:36px 36px}
+.hero>div{max-width:1180px;margin:auto;padding:2.5rem 1.25rem 3rem;display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+@media(max-width:860px){.hero>div{grid-template-columns:1fr}}
+.tb{display:inline-flex;border:2px solid var(--ink);background:var(--card);font:500 .72rem "IBM Plex Mono",monospace;flex-wrap:wrap}.tb span{padding:.3rem .7rem}.tb span+span{border-left:2px solid var(--ink)}
+h1{font:800 clamp(3.2rem,12vw,8rem)/.9 Archivo,sans-serif;letter-spacing:-.03em;margin:1.2rem 0 1rem;text-transform:uppercase}
+h1 em{display:block;color:var(--hot);text-transform:none;letter-spacing:-.02em;font-size:1.05em}
+.tag{display:grid;font:500 1.05rem "IBM Plex Mono",monospace;margin:0 0 1rem}.intro{max-width:52ch;color:var(--mute)}
+.row{display:flex;gap:1.1rem;flex-wrap:wrap;margin:1.6rem 0}
+.stats{display:flex;gap:1rem;flex-wrap:wrap}.stats div{border:2px solid var(--ink);background:var(--card);padding:.6rem 1.1rem;min-width:130px}.stats b{display:block;font:800 2.4rem/1 Archivo,sans-serif}.stats span{font:500 .72rem "IBM Plex Mono",monospace;text-transform:uppercase}
+.fig{margin:0;border:2px solid var(--ink);background:var(--card)}.fig svg{display:block;width:100%;height:auto;touch-action:pan-y;cursor:crosshair}.fig figcaption{border-top:2px solid var(--ink);padding:.45rem .8rem;font-size:.72rem}
+.mq{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;border-bottom:2px solid var(--ink)}
+.mq div{display:inline-block;padding:.75rem 0;animation:mq 40s linear infinite;font:500 .82rem "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.08em}
+.mq span{margin-right:2.6rem}.mq span::after{content:"\2726";color:var(--hot);margin-left:2.6rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+.sheet{max-width:1180px;margin:auto;padding:4.5rem 1.25rem}
+.sh{display:flex;gap:.8rem;align-items:center;font:500 .74rem "IBM Plex Mono",monospace;text-transform:uppercase;margin-bottom:1rem}.sh b{background:var(--hot);color:#fff;padding:.15rem .55rem;font-weight:500}
+h2{font:800 clamp(2rem,6vw,3.6rem)/1 Archivo,sans-serif;letter-spacing:-.02em;margin:0 0 1.2rem;text-transform:uppercase}
+h3{font:800 1.15rem Archivo,sans-serif;margin:0 0 .3rem}.lead{font-size:1.2rem;max-width:62ch}
+.notes{list-style:none;counter-reset:n;padding:0;margin:2rem 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-top:2px solid var(--ink)}
+.notes li{counter-increment:n;padding:1.2rem 1.4rem 1.4rem 0;border-bottom:1px solid var(--line)}
+.notes li::before{content:counter(n,decimal-leading-zero);font:500 .8rem "IBM Plex Mono",monospace;color:var(--hot);display:block;margin-bottom:.4rem}.notes p{margin:0;color:var(--mute)}
+table{width:100%;border-collapse:collapse;border:2px solid var(--ink);background:var(--card)}
+th{text-align:left;font-weight:500;font-size:.72rem;text-transform:uppercase;padding:.65rem .9rem;background:var(--ink);color:var(--paper)}
+td{padding:.9rem;border-top:1px solid var(--line);vertical-align:top}
+td:first-child,td:last-child{font:500 .85rem "IBM Plex Mono",monospace;color:var(--mute);white-space:nowrap}
+tbody tr{transition:background .2s}tbody tr:hover{background:rgba(232,85,43,.13)}
+@media(max-width:700px){thead{display:none}tr,td{display:block}tr{border-top:2px solid var(--ink);padding:.6rem 0}td{border:0;padding:.15rem .9rem}}
+.ticket{display:grid;grid-template-columns:1fr 1fr;max-width:780px;border:2px solid var(--ink);background:var(--card);transform:rotate(-1.2deg);transition:transform .3s;margin-top:1.6rem;box-shadow:8px 8px 0 var(--ink)}.ticket:hover{transform:none}
+.ticket>div{padding:1.4rem}.ticket>div+div{border-left:2px dashed var(--ink)}
+.ticket small{display:block;font-size:.72rem;text-transform:uppercase;color:var(--mute)}
+.ticket b{display:block;font:800 1.9rem/1.05 Archivo,sans-serif;text-transform:uppercase;margin:.2rem 0 .8rem}
+.no{font:500 1rem "IBM Plex Mono",monospace}.no i{font-style:normal;font-size:1.8rem;color:var(--hot)}
+@media(max-width:620px){.ticket{grid-template-columns:1fr}.ticket>div+div{border-left:0;border-top:2px dashed var(--ink)}}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.2rem;margin-top:1.6rem}
+.part{border:2px solid var(--ink);background:var(--card);padding:1rem;transition:transform .2s,box-shadow .2s}.part:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+.lab{font-size:.72rem;color:var(--hot);text-transform:uppercase;display:flex;justify-content:space-between;gap:.5rem}
+.av{width:100%;aspect-ratio:1/1;object-fit:cover;border:2px solid var(--ink);margin:.7rem 0;display:grid;place-items:center;font:800 3rem Archivo,sans-serif;background:repeating-linear-gradient(45deg,transparent 0 8px,var(--line) 8px 9px)}
+.part p{margin:.25rem 0 0;color:var(--mute);font-size:.95rem}
+.wings{margin-top:3.5rem}.wings h3{font-size:1.5rem;text-transform:uppercase}
+.say{background:var(--ink);color:var(--paper);padding:5rem 1.25rem;text-align:center}.say p{max-width:920px;margin:auto;font:800 clamp(1.6rem,5vw,3.4rem)/1.1 Archivo,sans-serif;text-transform:uppercase}.say em{color:var(--hot);text-transform:none}
+footer{max-width:1180px;margin:auto;padding:2.5rem 1.25rem}
+.tblock{display:grid;grid-template-columns:2fr 1.5fr 1fr 1fr;border:2px solid var(--ink);background:var(--card)}
+.tblock>div{padding:.8rem 1rem;border-right:2px solid var(--ink)}.tblock>div:last-child{border:0}.tblock small{display:block;color:var(--mute);font-size:.68rem;text-transform:uppercase}
+@media(max-width:760px){.tblock{grid-template-columns:1fr 1fr}.tblock>div{border-bottom:2px solid var(--ink)}}
+.fl{display:flex;gap:1.2rem;flex-wrap:wrap;margin:1.4rem 0;font-weight:600;align-items:center}.meta{color:var(--mute);font-size:.9rem}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
+
+.prog{position:fixed;left:0;top:0;height:4px;width:100%;background:var(--hot);transform-origin:left;transform:scaleX(0);z-index:60}
+.idx{display:none}
+@media(min-width:1280px){.idx{display:flex;position:fixed;right:14px;top:50%;transform:translateY(-50%);flex-direction:column;gap:6px;z-index:25}.idx a{font:500 .7rem "IBM Plex Mono",monospace;text-decoration:none;border:2px solid var(--ink);background:var(--card);padding:.2rem .45rem;transition:background .2s,color .2s}.idx a:hover,.idx a.on{background:var(--ink);color:var(--paper)}}
+.xh{display:none;position:fixed;left:0;top:0;z-index:50;pointer-events:none;opacity:0}
+@media(hover:hover) and (pointer:fine){.xh{display:block}}
+.xh b{position:absolute;background:rgba(232,85,43,.35)}.xh b:nth-child(1){left:-100vw;width:200vw;height:1px}.xh b:nth-child(2){top:-100vh;height:200vh;width:1px}
+.xh span{position:absolute;left:12px;top:12px;font:500 .65rem "IBM Plex Mono",monospace;background:var(--ink);color:var(--paper);padding:.1rem .35rem;white-space:nowrap}
+.fig{position:relative}.badge{position:absolute;right:8px;top:-36px;width:104px;height:104px;z-index:2;transition:transform .3s}.badge:hover{transform:rotate(12deg) scale(1.06)}
+.spin{transform-origin:60px 60px;animation:sp 18s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+.dim{position:relative;height:20px;margin-top:1.8rem;max-width:520px}
+.dim::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--ink);transform-origin:left;animation:draw 1.4s .2s both}
+.dim::after{content:"";position:absolute;inset:0;background:linear-gradient(var(--ink),var(--ink)) left/2px 100% no-repeat,linear-gradient(var(--ink),var(--ink)) right/2px 100% no-repeat;animation:fade 1.4s both}
+.dim span{position:absolute;left:50%;top:0;transform:translateX(-50%);background:#f1ebdc;padding:0 .6rem;font:500 .68rem "IBM Plex Mono",monospace;text-transform:uppercase;z-index:1;white-space:nowrap}
+@keyframes draw{from{transform:scaleX(0)}}@keyframes fade{from{opacity:0}}
+.gears{max-width:440px;margin:2rem 0 0}.gears svg{width:100%;height:auto;display:block}
+.quiz{border:2px solid var(--ink);background:var(--card);padding:1.4rem;max-width:780px;box-shadow:6px 6px 0 var(--ink)}.quiz small{display:block;font-size:.72rem;text-transform:uppercase;color:var(--hot)}.quiz h3{font-size:1.5rem;margin:.3rem 0}.quiz p{margin:.3rem 0}
+.opts{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem}
+.chip{font:600 .95rem Archivo,sans-serif;background:var(--paper);border:2px solid var(--ink);padding:.7rem 1rem;cursor:pointer;box-shadow:3px 3px 0 var(--ink);color:var(--ink);transition:transform .15s,background .15s}.chip:hover{background:var(--hot);color:#fff;transform:translate(1px,1px)}
+</style>
+</head>
+<body>
+<div class="prog" id="prog" aria-hidden="true"></div>
+<nav class="idx" aria-label="Sheet index"><a href="#home" title="Home">01</a><a href="#about" title="About">02</a><a href="#activities" title="Activities">03</a><a href="#register" title="Register">04</a><a href="#team" title="Team">05</a><a href="#end" title="End">06</a></nav>
+<div class="xh" id="xh" aria-hidden="true"><b></b><b></b><span id="xhl"></span></div>
+<header class="hd"><div>
+<a class="logo" href="#home">Raisme Anvaya</a>
+<ul class="nav" id="nav"><li><a href="#about"><i>02</i>About</a></li><li><a href="#activities"><i>03</i>Activities</a></li><li><a href="#register"><i>04</i>Register</a></li><li><a href="#team"><i>05</i>Team</a></li><li id="nAnn" hidden><a href="#announcements">Notices</a></li><li id="nCon" hidden><a href="#contact">Contact</a></li></ul>
+<a class="btn s" data-form href="#register">Join</a><button id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+</div></header>
+<main>
+<section class="hero" id="home"><div>
+<div>
+<div class="tb"><span>Dwg no. RA-001</span><span>Mechanical + Robotics &amp; AI</span></div>
+<h1>Raisme<em>Anvaya</em></h1>
+<p class="tag"><span>Connecting Minds.</span><span>Creating Innovations.</span><span>Building Futures.</span></p>
+<p class="intro">A student club of the Mechanical Department and the Robotics &amp; Artificial Intelligence branch, open to students of all branches, bringing students together through robotics, AI, mechanical innovation, smart manufacturing, sports, culture and community work.</p>
+<div class="row"><a class="btn" data-form href="#register">Join our club</a><a class="btn o" href="#team">Meet the team</a></div>
+<div class="stats"><div><b id="mem" data-n=""></b><span>Members</span></div><div><b id="wcount" data-n=""></b><span>Activity wings</span></div></div>
+<div class="dim"><span>All branches welcome</span></div>
+</div>
+<figure class="fig"><a class="badge" data-form href="#register" aria-label="Join RAISME ANVAYA"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="cp" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><circle cx="60" cy="60" r="58" fill="#e8552b" stroke="#17202e" stroke-width="3"/><g class="spin"><text font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#fff" textLength="268" lengthAdjust="spacing"><textPath href="#cp" textLength="268" lengthAdjust="spacing">OPEN TO ALL BRANCHES * JOIN NOW * </textPath></text></g><circle cx="60" cy="60" r="21" fill="#17202e"/><text x="60" y="65" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-size="14" fill="#ece6d8">JOIN</text></svg></a><svg id="arm" viewBox="0 0 400 360" role="img" aria-label="Interactive robot arm that follows your pointer"></svg><figcaption>Fig. 1 / ARM-01 &mdash; Move your pointer. Click to grip.</figcaption></figure>
+</div></section>
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section class="sheet" id="about"><div class="sh"><b>Sheet 02 / 06</b><span>General notes</span></div><h2>About Raisme Anvaya</h2>
+<p class="lead">RAISME ANVAYA is a multidisciplinary student club that connects <em>mechanical engineering</em> with <em>robotics and artificial intelligence</em>. Members learn by building, competing, organising and serving the community together. Students from all branches are welcome.</p>
+<div class="gears"><svg id="gears" viewBox="0 0 360 210" role="img" aria-label="Three meshing gears labelled Mechanical, Robotics and AI that turn as you scroll"></svg></div>
+<ol class="notes">
+<li><h3>Our vision</h3><p>A campus where students from every discipline create technology that improves lives.</p></li>
+<li><h3>Our mission</h3><p>Give students hands-on platforms to learn, lead and innovate beyond the classroom.</p></li>
+<li><h3>Our objectives</h3><p>Run workshops and competitions, support student projects, and build teamwork, leadership and social responsibility.</p></li>
+<li><h3>Why join</h3><p>Work on real projects, meet mentors and peers, join events, and build a portfolio that shows what you can do.</p></li>
+<li><h3>Multidisciplinary approach</h3><p>Mechanical design, intelligent software, sport and culture meet in one community, so ideas cross boundaries.</p></li>
+</ol></section>
+
+<section class="sheet" id="activities"><div class="sh"><b>Sheet 03 / 06</b><span>Bill of materials</span></div><h2>Club activities</h2>
+<table><thead><tr><th>Item</th><th>Activity</th><th>Description</th><th>Part no.</th></tr></thead><tbody id="bom"></tbody></table></section>
+
+<section class="sheet" id="register"><div class="sh"><b>Sheet 04 / 06</b><span>Work order</span></div><h2>Register</h2>
+<p class="lead">Fill in the form to apply for RAISME ANVAYA membership.</p>
+<div><div class="ticket"><div><small>Admit one</small><b>New member</b><span class="no">No. <i id="tno">&mdash;</i></span></div><div><small>Now open</small><b>Membership</b><a class="btn" data-form href="#register">Open the registration form</a></div></div></div>
+<div class="sh" style="margin-top:3.2rem"><span>Wing finder / 3 questions</span></div><div class="quiz" id="quiz"></div>
+<p class="meta" style="margin-top:1.6rem">Registration runs on Google Forms. It opens in a new tab.</p></section>
+
+<section class="sheet" id="team"><div class="sh"><b>Sheet 05 / 06</b><span>Assembly</span></div><h2>Our team</h2><div class="grid" id="teamGrid"></div>
+<div class="wings"><h3>Eight activity wings</h3><div class="grid" id="wingGrid"></div></div></section>
+
+<section class="sheet" id="announcements" hidden><div class="sh"><span>Revision notes</span></div><h2>Announcements</h2><div class="grid" id="annGrid"></div></section>
+<section class="sheet" id="contact" hidden><div class="sh"><span>Contact</span></div><h2>Contact us</h2><div class="part" id="cInfo" style="max-width:640px"></div></section>
+
+<div class="say"><p>RAISME ANVAYA is <em>not just a club.</em> It is a community of innovators, leaders and creators.</p></div>
+</main>
+<footer id="end">
+<div class="tblock"><div><small>Project</small><a class="logo" href="#home">Raisme Anvaya</a><br><span class="meta">Connecting Minds. Creating Innovations. Building Futures.</span></div><div><small>Drawn by</small>Students of the Mechanical Department and the Robotics &amp; AI branch</div><div><small>Sheet</small>06 / 06</div><div><small>Note</small>Do not scale drawing</div></div>
+<div class="fl"><a href="#about">About</a><a href="#activities">Activities</a><a data-form href="#register">Registration form</a><a href="#team">Team</a><button class="btn o s" id="share">Share this site</button></div>
+<p class="meta">&copy; <span id="yr"></span> RAISME ANVAYA. All rights reserved.</p>
+</footer>
+<script src="data.js"></script>
+<script>
+const $=s=>document.querySelector(s);
+const S=window.SITE||{"formUrl":"https://docs.google.com/forms/d/e/1FAIpQLSd32TlVsGHJvMtMsn-L6jXaEK5IaYnuiX0aA3HA7G1ZZ18VsA/viewform","members":22,"team":[{"role":"Faculty Coordinator","name":"Dr. Ashwin C. Gowda","bio":"Provides guidance and institutional supervision for the club.","photo":""},{"role":"President","name":"Rohan M Y","bio":"Leads the entire club and takes overall responsibility for its activities.","photo":""},{"role":"Vice President","name":"Sneha Rathod","bio":"Supports the President and helps ensure that all wings work properly.","photo":""},{"role":"General Secretary","name":"Harshith S K","bio":"Manages meetings, records, documentation and overall administration.","photo":""},{"role":"Joint Secretary","name":"Pavan C S","bio":"Supports the General Secretary and helps carry out the club's administrative activities.","photo":""},{"role":"Treasurer","name":"Vinay H C","bio":"Manages the club's budget, expenses and financial records.","photo":""}],"wings":[{"name":"Technical","focus":"Robotics, AI, coding and projects","leader":"","assistant":""},{"name":"Sports","focus":"Indoor and outdoor games","leader":"","assistant":""},{"name":"Cultural","focus":"Dance, music and arts","leader":"","assistant":""},{"name":"Academic","focus":"Learning and knowledge","leader":"","assistant":""},{"name":"Event Management","focus":"Events and operations","leader":"","assistant":""},{"name":"Innovation & Entrepreneurship","focus":"Ideas, startups and innovations","leader":"","assistant":""},{"name":"Media & Publicity","focus":"Media, photography and outreach","leader":"","assistant":""},{"name":"Design & Creative","focus":"Design, graphics and creativity","leader":"","assistant":""}],"announcements":[],"contact":{"college":"","department":"","email":"","phone":"","address":"","instagram":"","linkedin":""}},TEAM=S.team||[],WINGS=S.wings||[];
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const url=u=>/^https?:\/\//i.test(u||'')?esc(u):'';
+const img=u=>/^(https?:\/\/[^\s"'<>]+|[\w\-.\/]+\.(jpe?g|png|webp|gif))$/i.test(u||'')&&!/\.\./.test(u)?esc(u):'';
+const p2=n=>String(n).padStart(2,'0');
+const ACT=[["Robotics and Automation","Design, program and test robots and automated systems."],["Artificial Intelligence and Machine Learning","Study models, data and intelligent applications."],["Mechanical Design and Innovation","Turn concepts into CAD models and working prototypes."],["Smart Manufacturing","Explore automation, 3D printing and modern production."],["Technical Workshops","Hands-on sessions that teach tools and techniques."],["Technical Competitions","Test ideas and skills against other teams."],["Sports Activities","Team sports that build fitness and spirit."],["Cultural Events","Music, art and celebrations for the whole campus."],["Social and Community Activities","Projects that give back beyond the campus."]];
+$('#bom').innerHTML=ACT.map(([n,d],i)=>`<tr><td>${p2(i+1)}</td><td><b>${n}</b></td><td>${d}</td><td>RA-A${p2(i+1)}</td></tr>`).join('');
+const MQ=['Robotics','AI & ML','Mechanical design','Smart manufacturing','Workshops','Competitions','Sports','Culture','Community'].map(w=>`<span>${w}</span>`).join('');
+$('#mq').innerHTML=MQ+MQ;
+$('#teamGrid').innerHTML=TEAM.map((m,i)=>`<article class="part"><div class="lab"><span>A-${p2(i+1)}</span><span>${esc(m.role)}</span></div>${img(m.photo)?`<img class="av" src="${img(m.photo)}" alt="${esc(m.name)}" loading="lazy">`:`<div class="av" aria-hidden="true">${esc(String(m.name||'?').replace('Dr. ','').split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase())}</div>`}<h3>${esc(m.name||'Name to be added')}</h3><p>${esc(m.bio)}</p></article>`).join('');
+$('#wingGrid').innerHTML=WINGS.map((w,i)=>`<article class="part"><div class="lab"><span>W-${p2(i+1)}</span><span>Wing</span></div><h3 style="margin-top:.6rem">${esc(w.name)}</h3><p>${esc(w.focus)}</p><p><b>Leader:</b> ${esc(w.leader||'To be appointed')}<br><b>Assistant leader:</b> ${esc(w.assistant||'To be appointed')}</p></article>`).join('');
+const mn=Number(S.members);$('#tno').textContent=S.members===''||S.members==null||isNaN(mn)?'\u2014':mn+1;
+$('#mem').dataset.n=S.members??'';$('#wcount').dataset.n=WINGS.length;
+if(url(S.formUrl))document.querySelectorAll('[data-form]').forEach(a=>{a.href=url(S.formUrl);a.target='_blank';a.rel='noopener'});
+const AN=(S.announcements||[]).filter(a=>a.title);
+if(AN.length){$('#announcements').hidden=false;$('#nAnn').hidden=false;$('#annGrid').innerHTML=AN.map(a=>`<article class="part"><div class="lab"><span>${esc(a.date)}</span></div><h3 style="margin-top:.5rem">${esc(a.title)}</h3><p>${esc(a.body)}</p></article>`).join('')}
+const C=S.contact||{},CR=[['College',C.college],['Department',C.department],['Phone',C.phone],['Location',C.address]].filter(r=>r[1]).map(([a,b])=>`<p><b>${a}:</b> ${esc(b)}</p>`);
+if(C.email)CR.push(`<p><b>Email:</b> <a href="mailto:${esc(C.email)}">${esc(C.email)}</a></p>`);
+[['Instagram',C.instagram],['LinkedIn',C.linkedin]].forEach(([a,b])=>{if(url(b))CR.push(`<p><a href="${url(b)}" target="_blank" rel="noopener">${a}</a></p>`)});
+if(CR.length){$('#contact').hidden=false;$('#nCon').hidden=false;$('#cInfo').innerHTML='<h3>Reach the club</h3>'+CR.join('')}
+$('#yr').textContent=new Date().getFullYear();
+document.querySelectorAll('[data-n]').forEach(el=>{const v=Number(el.dataset.n);if(el.dataset.n===''||isNaN(v)){el.textContent='\u2014';return}let s;(function f(t){s??=t;const p=Math.min(1,(t-s)/900);el.textContent=Math.round(v*p);if(p<1)requestAnimationFrame(f)})(performance.now())});
+$('#burger').onclick=e=>{const o=$('#nav').classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o)};
+$('#nav').addEventListener('click',e=>{if(e.target.closest('a'))$('#nav').classList.remove('open')});
+$('#share').onclick=async e=>{const d={title:'RAISME ANVAYA',text:'Connecting Minds. Creating Innovations. Building Futures.',url:location.href.split('#')[0]};try{if(navigator.share)await navigator.share(d);else{await navigator.clipboard.writeText(d.url);e.target.textContent='Link copied'}}catch{}};
+/* robot arm */
+(function(){
+const svg=$('#arm'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches,B={x:120,y:318},L1=130,L2=110;
+svg.innerHTML=`<defs><pattern id="gp" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="rgba(23,32,46,.12)"/></pattern></defs><rect width="400" height="360" fill="url(#gp)"/><line x1="0" y1="326" x2="400" y2="326" stroke="#17202e" stroke-width="3"/><path d="M92 326h56l-8-18h-40z" fill="#17202e"/><text x="12" y="22" font-family="IBM Plex Mono,monospace" font-size="10" fill="#566074">ARM-01 / L1 130 / L2 110</text><rect id="pt" width="22" height="22" fill="#e8552b" stroke="#17202e" stroke-width="3"/><line id="l1" stroke="#17202e" stroke-width="16" stroke-linecap="round"/><line id="l1i" stroke="#ece6d8" stroke-width="4" stroke-linecap="round"/><line id="l2" stroke="#17202e" stroke-width="12" stroke-linecap="round"/><line id="l2i" stroke="#ece6d8" stroke-width="3" stroke-linecap="round"/><line id="f1" stroke="#17202e" stroke-width="5" stroke-linecap="round"/><line id="f2" stroke="#17202e" stroke-width="5" stroke-linecap="round"/><circle id="j0" r="11" fill="#e8552b" stroke="#17202e" stroke-width="3"/><circle id="j1" r="9" fill="#e8552b" stroke="#17202e" stroke-width="3"/><circle id="j2" r="6" fill="#17202e"/><circle id="tg" r="9" fill="none" stroke="#e8552b" stroke-dasharray="3 3"/>`;
+const g=id=>svg.querySelector('#'+id),ln=(id,a,b,c,d)=>{const e=g(id);e.setAttribute('x1',a);e.setAttribute('y1',b);e.setAttribute('x2',c);e.setAttribute('y2',d)},ci=(id,x,y)=>{const e=g(id);e.setAttribute('cx',x);e.setAttribute('cy',y)};
+let tx=300,ty=230,cx=tx,cy=ty,grip=false,go=.55,hold=false,px=300,py=304,wx=0,wy=0,last=-9999;
+function frame(t){
+ if(!rm&&t-last>2500){tx=B.x+170+Math.sin(t/900)*70;ty=230+Math.cos(t/700)*50}
+ const k=rm?1:.18;cx+=(tx-cx)*k;cy+=(ty-cy)*k;
+ let dx=cx-B.x,dy=Math.min(cy,310)-B.y,d=Math.hypot(dx,dy);
+ if(!d){dx=40;d=40}
+ const m=Math.max(40,Math.min(L1+L2-2,d))/d;dx*=m;dy*=m;d=Math.hypot(dx,dy);
+ const a=Math.atan2(dy,dx),c=Math.max(-1,Math.min(1,(L1*L1+d*d-L2*L2)/(2*L1*d))),a1=a+(dx>=0?-1:1)*Math.acos(c);
+ const ex=B.x+L1*Math.cos(a1),ey=B.y+L1*Math.sin(a1);wx=B.x+dx;wy=B.y+dy;
+ const h=Math.atan2(wy-ey,wx-ex);go+=((grip?.08:.55)-go)*(rm?1:.2);
+ ln('l1',B.x,B.y,ex,ey);ln('l1i',B.x,B.y,ex,ey);ln('l2',ex,ey,wx,wy);ln('l2i',ex,ey,wx,wy);
+ ln('f1',wx,wy,wx+24*Math.cos(h+go),wy+24*Math.sin(h+go));ln('f2',wx,wy,wx+24*Math.cos(h-go),wy+24*Math.sin(h-go));
+ ci('j0',B.x,B.y);ci('j1',ex,ey);ci('j2',wx,wy);ci('tg',tx,ty);
+ if(hold){px=wx+14*Math.cos(h)-11;py=wy+14*Math.sin(h)-11}
+ g('pt').setAttribute('x',px);g('pt').setAttribute('y',py);
+}
+function aim(e){const r=svg.getBoundingClientRect();if(!r.width)return;tx=(e.clientX-r.left)/r.width*400;ty=(e.clientY-r.top)/r.height*360;last=performance.now();if(rm)frame(last)}
+addEventListener('pointermove',aim);
+svg.addEventListener('pointerdown',e=>{aim(e);grip=!grip;
+ if(grip){if(Math.hypot(wx-(px+11),wy-(py+11))<36)hold=true}
+ else if(hold){hold=false;px=Math.max(8,Math.min(370,wx-11));py=304}
+ if(rm)frame(performance.now())});
+frame(performance.now());
+if(!rm)(function loop(t){frame(t);requestAnimationFrame(loop)})(performance.now());
+})();
+
+const onScroll=[];let tk=false;
+addEventListener('scroll',()=>{if(!tk){tk=true;requestAnimationFrame(()=>{tk=false;onScroll.forEach(f=>f())})}},{passive:true});
+/* meshing gears driven by scroll */
+(function(){const svg=$('#gears');if(!svg)return;const m=8,G=[{n:16,x:92,l:'Mechanical',c:'#f6f1e4'},{n:11,x:200,l:'Robotics',c:'#f6f1e4'},{n:8,x:276,l:'AI',c:'#e8552b'}],y=92;
+const path=(n,r)=>{const ro=r+m*.55,ri=r-m*.6,p=2*Math.PI/n;let d='';for(let i=0;i<n;i++)[[ri,0],[ro,.2],[ro,.5],[ri,.7]].forEach(([q,f],j)=>{const t=i*p+f*p;d+=(i+j?'L':'M')+(Math.cos(t)*q).toFixed(1)+' '+(Math.sin(t)*q).toFixed(1)});return d+'Z'};
+svg.innerHTML=G.map((g,i)=>{const r=g.n*m/2;return `<g transform="translate(${g.x} ${y})"><g id="gr${i}"><path d="${path(g.n,r)}" fill="${g.c}" stroke="#17202e" stroke-width="2.5" stroke-linejoin="round"/><circle r="${r*.4}" fill="none" stroke="#17202e" stroke-width="2"/><line x1="${-r*.6}" x2="${r*.6}" stroke="#17202e" stroke-width="2"/><line y1="${-r*.6}" y2="${r*.6}" stroke="#17202e" stroke-width="2"/></g><circle r="5" fill="#17202e"/></g><text x="${g.x}" y="${y+r+m+14}" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#566074">${g.l.toUpperCase()}</text>`}).join('');
+const gr=[0,1,2].map(i=>svg.querySelector('#gr'+i)),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const spin=()=>{const s=rm?0:scrollY*.3;gr[0].setAttribute('transform',`rotate(${-7.9+s})`);gr[1].setAttribute('transform',`rotate(${152-s*16/11})`);gr[2].setAttribute('transform',`rotate(${142+s*2})`)};
+spin();onScroll.push(spin)})();
+/* wing finder */
+(function(){const el=$('#quiz');if(!el)return;
+const Q=[["Your ideal Saturday?",[["Build or program something",["Technical","Innovation & Entrepreneurship"]],["Play or organise a match",["Sports"]],["Perform or create art",["Cultural"]],["Run a campus event",["Event Management"]]]],["What do you want to get better at?",[["Coding and electronics",["Technical"]],["Research and presenting",["Academic"]],["Design and photography",["Design & Creative","Media & Publicity"]],["Startups and big ideas",["Innovation & Entrepreneurship"]]]],["Your friends call you...",[["The planner",["Event Management","Academic"]],["The maker",["Technical","Design & Creative"]],["The storyteller",["Media & Publicity","Cultural"]],["The energiser",["Sports","Innovation & Entrepreneurship"]]]]];
+let i=0,sc={};
+function draw(){if(i<Q.length){el.innerHTML=`<small>Question ${i+1} of ${Q.length}</small><h3>${Q[i][0]}</h3><div class="opts">${Q[i][1].map((o,k)=>`<button class="chip" data-k="${k}">${o[0]}</button>`).join('')}</div>`;return}
+const top=Object.entries(sc).sort((a,b)=>b[1]-a[1])[0]?.[0]||'Technical',w=WINGS.find(x=>x.name===top);
+el.innerHTML=`<small>Your best fit</small><h3>${esc(top)} wing</h3><p>${esc(w?w.focus:'')}</p><p class="meta">Just a fun suggestion. You choose your areas of interest in the form.</p><div class="row"><a class="btn" data-form href="#register">Join the club</a><button class="btn o" data-k="r">Start again</button></div>`;
+if(url(S.formUrl))el.querySelectorAll('[data-form]').forEach(a=>{a.href=url(S.formUrl);a.target='_blank';a.rel='noopener'})}
+el.addEventListener('click',e=>{const b=e.target.closest('button[data-k]');if(!b)return;if(b.dataset.k==='r'){i=0;sc={}}else{Q[i][1][+b.dataset.k][1].forEach(w=>sc[w]=(sc[w]||0)+1);i++}draw()});draw()})();
+/* progress bar and sheet index */
+(function(){const ids=['home','about','activities','register','team','end'],L=[...document.querySelectorAll('.idx a')],pr=$('#prog');
+const spy=()=>{const mx=document.documentElement.scrollHeight-innerHeight;pr.style.transform=`scaleX(${mx>0?Math.min(1,scrollY/mx):0})`;let cur=0;ids.forEach((id,k)=>{const e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<innerHeight*.4)cur=k});L.forEach((a,k)=>a.classList.toggle('on',k===cur))};
+spy();onScroll.push(spy)})();
+/* CAD crosshair (mouse devices only) */
+(function(){if(!matchMedia('(hover:hover) and (pointer:fine)').matches||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+const x=$('#xh'),l=$('#xhl');let px=0,py=0,q=false;
+addEventListener('pointermove',e=>{px=Math.round(e.clientX);py=Math.round(e.clientY);if(!q){q=true;requestAnimationFrame(()=>{q=false;x.style.transform=`translate(${px}px,${py}px)`;l.textContent=`X ${String(px).padStart(4,'0')}  Y ${String(py).padStart(4,'0')}`;x.style.opacity=1})}});
+document.documentElement.addEventListener('pointerleave',()=>{x.style.opacity=0})})();
+/* reveal on scroll */
+const io='IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08}):null;
+document.querySelectorAll('.sheet>*,.say p').forEach(el=>{el.classList.add('rv');io?io.observe(el):el.classList.add('in')});
+</script>
+</body>
+</html>
